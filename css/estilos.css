@@ -1,0 +1,26 @@
+
+
+#dados{
+  display: inline-block;
+  width: 49%;
+border: 3px solid black;
+}
+
+#chartContainer{
+  float: right;
+  display: block;
+  width: 49%;
+  
+border: 3px solid black;
+
+}
+
+
+input[type=number] {
+  width: auto;
+  text-align: center;
+}
+
+.chartContainer{
+  display: none;
+}

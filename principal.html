@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quanto posso gastar agora?</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
+<body>
+    <div id="dados">
+      <h2>Quanto posso gastar agora?</h2><label>Nos próximos <input class="meses" placeholder="digite quantos meses" type="number" pattern="(\d+)" value="3"> meses
+      <p class="frase"><h1>R$ <span id="saldo">0,00</span></h1></p>
+      <button class="botao-detalhar" id="botao-detalhar">...detalhar...</button>
+      <button class="botao-configurar" id="botao-configurar">...configurar...</button>
+    <!/div>
+    <!div id="mensagens">
+        <p>
+          <span id="tagRecadoEmprestimos">tagRecadoEmprestimos</span>
+          <span id="detalhesEmprestimos"detalhesEmprestimos</span>
+        </p>
+        <p>
+          <span id="tagRecado">tagRecado</span>
+          <span id="detalhesInvestimentos">detalhesInvestimentos</span>
+        </p>
+        <p>
+          <span id="tagRecadoEmprestar">tagRecadoEmprestar</span>
+          <span id="detalhesEmprestar">detalhesEmprestar</span>
+        </p>
+        <p>
+          <span id="tagRecadoInvestimento">tagRecadoInvestimento</span>
+          <span id="detalhesInvestimentosRecorrentes">detalhesInvestimentosRecorrentes</span>
+        </p>
+      <!/div>
+
+
+
+
+        <p><br></p>
+      <!div id="dados">
+        <p>Digite quanto você tem de...</p>
+        <ul>
+            <li><p>...dinhero...</p>
+              <ul id="saldos">
+                <li>...no bolso: <input value=10 class="saldos" id="bolso" placeholder="digite quanto você tem de dinheiro no bolso" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>...na carteira/bolsa: <input value=35 class="saldos" id="carteira" placeholder="digite quanto você tem de dinheiro na caiteira ou bolsa" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>...no banco: <input value=400 class="saldos" id="banco" placeholder="digite quanto você tem de dinheiro no banco" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li><button class="mais-saldos" id="mais-saldos">...mais...</button></li>
+              </ul>
+            </li>
+        </ul>
+
+        <p><br></p>
+
+        <p>Digite quanto você recebe todo mês de...</p>
+        <ul>
+            <li><p>...</p>
+              <ul id="receitas">
+                <li>...salários: <input value=1200 class="receitas" id="salarios" placeholder="digite quanto você de salário todo mês" type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value=5 class="data-receitas" id="data-salarios" placeholder="digite o dia do mês que você recebe" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>...bicos: <input value=80 class="receitas" id="bicos" placeholder="digite quanto você recebe fazendo bicos" type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value=30 class="data-receitas" id="data-bicos" placeholder="digite o dia do mês que você recebe" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li><button id="mais-receitas">...mais...</button></li>
+              </ul>
+            </li>
+        </ul>
+
+        <p><br></p>
+
+        <p>Digite quanto você gasta todo mês com...</p>
+        <ul>
+            <li><p>...contas de...</p>
+              <ul id="despesas">
+                <li>água: <input value="55" class="despesas" id="agua" placeholder="digite quanto você paga de água todo mês, mais ou menos..." type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value="5" class="data-despesas" id="data-agua" placeholder="digite o dia que você paga" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>luz: <input value="80" class="despesas" id="luz" placeholder="digite quanto você paga de luz todo mês, mais ou menos..." type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value="10" class="data-despesas" id="data-luz" placeholder="digite o dia que você paga" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>telefone: <input value="40" class="despesas" id="telefone" placeholder="digite quanto você paga de telefone todo mês, mais ou menos..." type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value="10" class="data-despesas" id="data-telefone" placeholder="digite o dia que você paga" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>ônibus/metrô: <input value="120" class="despesas" id="transporte" placeholder="digite quanto você gasta de ônibus e metrô todo mês, mais ou menos..." type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value="10" class="data-despesas" id="data-transporte" placeholder="digite o dia que você paga" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li>mercado: <input value="450" class="despesas" id="mercado" placeholder="digite quanto você gasta de mercado todo mês, mais ou menos..." type="number" pattern="(\d+)([\,])(\d{2})">
+                  no dia <input value="25" class="data-despesas" id="data-mercado" placeholder="digite o dia que você paga" type="number" pattern="(\d+)([\,])(\d{2})">
+                <li><button id="mais-despesas">...mais...</button></li>
+              </ul>
+            </li>
+        </ul>
+
+        <p><br></p>
+
+        <p><button class="botao-calcular" id="botao-calcular">...calcular...</button></p>
+    </div>
+    <div id="chartContainer" style="height: 370px; max-width: 100%; margin: 0px auto;"></div>
+
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/atualizaMensagens.js" charset="utf-8"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>calculaLinha();</script>
+</body>
+</html>
